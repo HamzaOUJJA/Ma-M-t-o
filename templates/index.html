@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma-Meteo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body style="background-image: url('{{ image_url }}');">
+    <div class="container">
+        <h1 class="heading">MaMétéo</h1>
+        <form method="POST">
+            <input type="text" name="ville" placeholder="Entrer ville">
+            <button type="submit" class="btn">Recherche</button>
+        </form>
+        <div class="weather">
+            <div class="left">
+                <h2 class="temp">{{ temp }} &#176;C</h2>
+                <h2 class="city">{{ ville }}</h2>
+            </div>
+            <div class="right">
+                <div class="icon">
+                    <p><img src="http://openweathermap.org/img/w/{{ icon }}.png" width="120px"></p>
+                </div>
+                <div class="condition">
+                    <p>{{ description }}</p>
+                    <p>{{ Jour }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if exception_occurred %}
+    <script>
+        window.onload = function() {
+            alert("City information is not available");
+        }
+    </script>
+    {% endif %}
+</body>
+</html>
