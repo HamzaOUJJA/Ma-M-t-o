@@ -8,9 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
 </head>
 
-<body style="background-image: url('{{ image_url }}');">
-    <div class="container">
-        <h1 class="heading">MaMétéo</h1>
+
+<body style="background-image: url('{{ url_for('static', filename=background_image) }}');">
+        <div class="container">
+        <h1 class="heading">Ma-Météo</h1>
         <form method="POST">
             <input type="text" name="ville" placeholder="Entrer ville">
             <button type="submit" class="btn">Recherche</button>
@@ -25,8 +26,9 @@
                     <p><img src="http://openweathermap.org/img/w/{{ icon }}.png" width="120px"></p>
                 </div>
                 <div class="condition">
-                    <p>{{ description }}</p>
-                    <p>{{ Jour }}</p>
+                    <p>{{ description_english }}</p>
+                    <p>{{ description_french }}</p>
+                    <p>{{ jour }}</p>
                 </div>
             </div>
         </div>
@@ -39,5 +41,26 @@
         }
     </script>
     {% endif %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer style="background-color: rgba(0, 0, 0, 0.7); padding: 20px; text-align: center; color: white;">
+    <div class="developer-info">
+        <h3>About the Developer</h3>
+        <p><strong>Hi there! I'm Hamza OUJJA, a dedicated software developer with a passion for crafting dynamic and user-friendly applications using Flask and Python.</strong></p>
+        <p><strong>Feel free to connect with me and explore more of my work:</strong></p>
+        <p>
+            <a href="https://github.com/HamzaOUJJA?tab=repositories" target="_blank" style="color: white;">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/oujja-hamza-8068691b4/" target="_blank" style="color: white;">LinkedIn</a> | 
+            <a href="mailto:hamzaoujja08@gmail.com" style="color: white;">Email</a>
+        </p>
+    </div>
+</footer>
+    
 </body>
 </html>
