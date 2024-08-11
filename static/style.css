@@ -55,7 +55,8 @@ grid-gap:3%;
 
 
 .container{
-width: 50%;;
+width: 50%;
+margin-left: 24%;
 background: var(--transp-white-2);
 backdrop-filter: blur(10px);
 margin: 5rem auto;
@@ -150,6 +151,11 @@ margin-top: -22px;
 text-align: center;
 }
 
+.day {
+margin-top: -22px;
+text-align: center;
+}
+
 
 
 
@@ -179,6 +185,7 @@ height:85px;
 padding: .5rem;
 border-radius:0 10px 0 0;
 color:#04009A;
+margin-bottom: 40px;
 }
 
 
@@ -191,47 +198,30 @@ height:150px;
 border-radius:0 0 10px;
 color:rgb(5,41,51);
 font-size: 20px;
+margin-top: 10px;
 }
 
 
 
 
 
-
-@media only screen and (max-width: 1000px) {
-.container{
- width:80%; 
-} 
+@media (min-width: 620px) and (max-width: 1200px) {
+    .container{
+        width: 80%;
+        }
 }
-@media only screen and (max-width: 700px) {
-.weather {
-  flex-direction:column;
-  height:auto;
+@media  (max-width: 620px) {
+    .container{
+        width: 98%;
+        }
 }
-.container{
-  text-align:center;
-  width:90%;
-  height:90%;
-}
-.right{
-  margin-top:.5rem;
-  margin-left:0;
-}
-form{
-  grid-template-columns:100%;
-
-}
-
-
-}
-
 
 
 body  {
 background-size:cover;
 background-repeat: no-repeat;
 margin: 0;
-width: 1920px;
+
 }
 
 
